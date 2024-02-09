@@ -1,22 +1,36 @@
 .gradient-bg {
-  background: #005AA7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  /* -webkit-background:linear-gradient(180deg, #120024 0%, #2b032f 50%, #4d1b48 100%);
+  background: linear-gradient(0deg, #120024 0%, #2b032f 50%, #4d1b48 100%);*/
+  background-size: cover; 
+  background: url("5418621_2813203.jpg");
+}
+.btn-light-oblique {
+background-color:#e40470 !important;
+color:white !important;
+ }
+
+.btn-light-oblique:hover {
+  background-color: rgba(255, 255, 255, 0.32);
 }
 
-.bg-containers  {
-  background: #ADA996;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+.bg-containers {
+  color: white;
+  background: rgba(0, 0, 0, 0.24);
 }
 .song-img {
-  width: 150px;
-  height: 150px;
-  
+  width: 90%; /* Adjust the width of the image as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some space between image and text */
 }
 
 .song-img:hover {
   opacity: 0.8;
+}
+.songRecs {
+  display: flex;
+  flex-direction: column; /* Arrange children in a column */
+}
+
+.song-info {
+  margin: 0; /* Remove default margin */
 }

@@ -147,7 +147,7 @@ async function getWeatherLatLon(lat, lon) {
 // Fetch music recommendations from Spotify's recommendation API
 async function fetchSpotifyRecommendations(accessToken, mood) {
   const response = await fetch(
-    `https://api.spotify.com/v1/recommendations?limit=3&seed_genres=${mood}`,
+    `https://api.spotify.com/v1/recommendations?limit=1&seed_genres=${mood}`,
     {
       method: "GET",
       headers: {
@@ -198,46 +198,17 @@ async function main(weatherData) {
   const mood = mapWeatherToMood(weatherData);
   console.log(mood);
   const recommendations = await fetchSpotifyRecommendations(accessToken, mood);
-  const songsList = document.createElement("div");
-  songsList.classList.add("row");
-  songsList.classList.add("d-flex")
-  console.log(recommendations);
+   console.log(recommendations[0].album.images[0].url);
+  const songImg=document.querySelector(".song-img");
+  songImg.src=recommendations[0].album.images[0].url;
+  songImg.alt=`Album art for ${recommendations[0].name}`;
+  const info=document.querySelector(".song-info");
+  info.textContent=` ${recommendations[0].name} by ${recommendations[0].artists[0].name}`;
+
   
-  recommendations.slice(0, 3).forEach(song => { // Use slice to limit to 3 songs
-      console.log("entered loop");
-      const listItem = document.createElement("div");
-      listItem.classList.add("col-sm");
-      listItem.classList.add("text-left");
-      listItem.classList.add("justify-content-center")
-
-
-      // Create elements for song name, artist, and album art
-      const songName = document.createElement("p");
-      songName.textContent = `${song.name}`;
-
-      const artist = document.createElement("p");
-      artist.textContent = `${song.artists[0].name}`;
-
-      const albumArt = document.createElement("img");
-      albumArt.classList.add("song-img")
-      albumArt.src = song.album.images[0].url;
-      albumArt.alt = `Album art for ${song.name}`;
-
-      // Append elements to list item
-      
-      listItem.appendChild(albumArt);
-      listItem.appendChild(songName);
-      listItem.appendChild(artist);
-
-      // Append list item to songs list
-      songsList.appendChild(listItem);
-  });
-
-  clearRecommendations();
   songsDiv.classList.remove("d-none");
-  songsDiv.appendChild(songsList);
   console.log("showed songs");
-}
+};
 
 
 

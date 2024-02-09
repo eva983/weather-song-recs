@@ -12,9 +12,11 @@
     </style>
 </head>
 
-<body class="gradient-bg">
+<body class="gradient-bg " >
+    <main >
     <h1>
-        <div class=" date-container">
+        <div class="date-container">
+            song of the day
         </div>
     </h1>
     <div class="container">
@@ -23,59 +25,64 @@
                 <div class="search-container ">
                     <form>
                         <div class="input-group mb-2">
-                            <input type="text" class="form-control form-control-sm rounded-2 m-2" placeholder="Search City">
+                            <input type="text" class="form-control form-control-sm rounded-2 m-2"
+                                placeholder="Search City">
                             <button class="btn btn-light border-secondary rounded-2 m-2" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
-                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor"
+                                    class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path
+                                        d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                 </svg>
                             </button>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button onclick="getLocation()" class="btn btn-dark rounded-2">Get My Location</button>
+                            <button onclick="getLocation()" class="btn btn-light-oblique fw-bold rounded-2">Get My Location</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    
-    
+
+
     <div class="container">
-        
+
         <div class="row justify-content-center mt-4">
             <div class="col-md-6">
                 <div class="weather bg-containers  rounded p-4">
-                 
+                    <img class="rounded mx-auto d-block w-25" src="icon.png" alt="default weather icon">
+
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="container pb-4 ">
-        
+    <div class="container pb-4">
         <div class="row justify-content-center mt-4">
             <div class="col-md-6">
-                <div class="songRecs rounded p-4 d-none">
-                    <h3>songs to match the mood..</h3>
+                <div class="songRecs bg-containers d-none col-md d-flex text-left justify-content-center align-items-center rounded p-4">
+                    <img class="row song-img" src="" alt="">
+                    <p class="row song-info"></p>
                 </div>
             </div>
         </div>
     </div>
     
-    
-  
 
 
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</main>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>
-
-
-
-    
