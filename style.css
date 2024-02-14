@@ -1,21 +1,20 @@
-.gradient-bg {
-  /* -webkit-background:linear-gradient(180deg, #120024 0%, #2b032f 50%, #4d1b48 100%);
-  background: linear-gradient(0deg, #120024 0%, #2b032f 50%, #4d1b48 100%);*/
-  background-size: cover; 
-  background: url("5418621_2813203.jpg");
-}
 .btn-light-oblique {
-background-color:#e40470 !important;
-color:white !important;
- }
+  background-color: #e40470 !important;
+  color: white !important;
+}
 
 .btn-light-oblique:hover {
   background-color: rgba(255, 255, 255, 0.32);
 }
 
-.bg-containers {
-  color: white;
-  background: rgba(0, 0, 0, 0.24);
+.content {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1.3rem;
+  row-gap: 50px;
+  margin: auto;
 }
 .song-img {
   width: 90%; /* Adjust the width of the image as needed */
@@ -23,14 +22,93 @@ color:white !important;
   margin-right: 10px; /* Add some space between image and text */
 }
 
-.song-img:hover {
-  opacity: 0.8;
-}
-.songRecs {
+.container {
+  width: 45%;
   display: flex;
-  flex-direction: column; /* Arrange children in a column */
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-container {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px 20px 20px;
+}
+
+.player-container,
+.weather {
+  background: #f7fbfd;
+  border-radius: 2.4rem;
+  box-shadow: 2rem 2rem 8rem rgba(78, 134, 165, 0.09),
+    1rem 1rem 4rem rgba(78, 134, 165, 0.09),
+    inset 4rem 4rem 10rem rgba(78, 134, 165, 0.05);
+  flex-direction: column;
+  height: fit-content;
+  overflow: hidden;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* transform: translate3D(-50%, -50%, 0); */
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px 20px 20px;
 }
 
 .song-info {
-  margin: 0; /* Remove default margin */
+  flex-direction: column;
+  width: 300px;
+  margin: 30px;
+  font-size: 0.9rem;
+}
+#title {
+  font-size: 18px;
+}
+#artist {
+  font-size: 15px;
+}
+
+.duration {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 300px;
+  margin: 0 30px 0 30px;
+  font-size: 0.9rem;
+}
+.progress-bar {
+  width: 300px;
+  margin: 0 30px 30px 30px;
+}
+
+.progress-bar input {
+  width: 100%;
+}
+
+.player-btns {
+  row-gap: 20px;
+}
+
+.controls {
+  background: rgba(#fff, 0.5);
+  border-radius: 10rem;
+  box-shadow: 1rem 1rem 4rem rgba(78, 134, 165, 0.09),
+    0.5rem 0.5rem 2rem rgba(78, 134, 165, 0.09),
+    -0.5rem -1.5rem 2rem rgba(255, 255, 255, 1),
+    inset 1rem 1rem 2.3rem rgba(78, 134, 165, 0.05), 0px 0px 0.1rem #ffffff,
+    inset 0.1rem 0.1rem 0 #ffffff;
+  height: 5rem;
+  margin: 0 1rem 3rem;
+  transition: box-shadow 0.1s ease-in;
+  width: 5rem;
+  border: #abc9ff61 1px solid;
+}
+
+.controls:hover,
+.controls:active {
+  box-shadow: 1rem 1rem 4rem rgba(78, 134, 165, 0),
+    0 0.1rem 0.1rem rgba(78, 134, 165, 0.25),
+    -0.5rem -1.5rem 2rem rgba(255, 255, 255, 0),
+    inset 1rem 1rem 2.3rem rgba(78, 134, 165, 0.05),
+    0 0.1rem 0.1rem rgba(255, 255, 255, 1),
+    inset 0.1rem -0.1rem 0 rgba(255, 255, 255, 0);
 }
