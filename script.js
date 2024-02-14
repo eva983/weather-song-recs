@@ -35,7 +35,6 @@ async function getAccessToken() {
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const cityName = event.target.elements["city"].value.trim(); // Adjust "city" to match the name attribute of your input field
-  console.log(cityName)
   const weatherData = await getWeather(cityName);
   main(weatherData);
 });
@@ -55,7 +54,6 @@ form.addEventListener("submit", async (event) => {
     }
 
     function showWeather(data) {
-      console.log("in showWeather")
       if (!data || !data.main || !data.main.temp || !data.weather || !data.weather[0] || !data.weather[0].description) {
         console.error("Invalid weather data:", data);
         return; // Exit early if data is invalid or missing properties
@@ -82,7 +80,6 @@ form.addEventListener("submit", async (event) => {
         }
     
         const description = data.weather[0].description;
-        console.log(description + " in showWeather ")
         const humidity = data.main.humidity;
         const imgsrc = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
     
@@ -119,7 +116,6 @@ function showPosition(position) {
 }
 
 async function getWeatherLatLon(lat, lon) {
-  console.log(" in getWeatherLatLon");
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
   try {
@@ -152,7 +148,6 @@ async function fetchSpotifyRecommendations(accessToken, mood) {
 // Function to map weather conditions to Spotify moods
 function mapWeatherToMood(weatherData) {
   const weatherDescription = weatherData.weather[0].description.toLowerCase();
-  console.log(weatherDescription + " in mapWeatherToMood ")
 
   if (
     weatherDescription.includes("rain") ||
@@ -185,9 +180,7 @@ function mapWeatherToMood(weatherData) {
 async function main(weatherData) {
   const accessToken = await getAccessToken();
   const mood = mapWeatherToMood(weatherData);
-  console.log(mood);
   const recommendations = await fetchSpotifyRecommendations(accessToken, mood);
-  console.log(recommendations[0].album.images[0].url);
   const songImg = document.getElementById("cover");
   songImg.src = recommendations[0].album.images[0].url;
   songImg.alt = `Album art for ${recommendations[0].name}`;
@@ -199,17 +192,19 @@ async function main(weatherData) {
   duration.textContent =
     Math.floor((recommendations[0].duration_ms / 1000 / 60) % 60) + `:00`;
   const audioPlayer = document.getElementById("audio-player");
-  console.log(recommendations[0].external_urls);
   const pauseButton = document.getElementById("pause-btn");
+  console.log(recommendations[0].preview_url);
+
   audioPlayer.src = recommendations[0].preview_url;
   const spotLink=document.getElementById("spotify-btn")
   spotLink.href= recommendations[0].external_urls.spotify;
   const text=document.getElementById("song-text");
   text.textContent=`a ${mood} song to match a ${weatherData.weather[0].description.toLowerCase()} day..`;
-  if (audioPlayer.src == null) {
-    document.querySelector("error-text").textContent =
-      "Sorry! There is no preview available";
-  }
+  console.log(audioPlayer.src === null)
+  if (recommendations[0].preview_url === null) {
+    document.querySelector(".error-text").textContent =
+        "Sorry! There is no preview available";
+}
   pauseButton.addEventListener("click", function () {
     audioPlayer.paused ? audioPlayer.play() : audioPlayer.pause();
   });
