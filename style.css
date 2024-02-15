@@ -28,7 +28,9 @@
   justify-content: center;
   align-items: center;
 }
-
+.search-container {
+  width: 100%;
+}
 .weather-container {
   flex-direction: column;
   justify-content: flex-start;
@@ -52,6 +54,9 @@
   justify-content: flex-start;
   align-items: center;
   padding: 40px 20px 20px 20px;
+}
+.weather {
+  width: 100%;
 }
 
 .song-info {
@@ -118,9 +123,8 @@
     flex-direction: column;
     width: 100%;
   }
-  .container,
-   .search-container,
-   .weather {
+  .container
+   {
     width: 100%;
   }
   .weather-container {
